@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 실습3</title>
+</head>
+<body>
+    <ul>
+        <li>아이템1</li>
+        <li>아이템2</li>
+        <li>아이템3</li>
+    </ul>
+
+
+    <script>
+        //클래스이름을 추가하고 li 요소의 텍스트를 새아이템으로 변경하기
+        //첫번째 li 요소에는 css 선택자를 사용하여 글자 색상을 red로 변경하기
+        const items = document.querySelectorAll("li");
+
+        items.forEach((item, i) => {
+            item.classList.add('item');
+            item.innerText = "새아이템";
+
+            if(i == 0) {
+                item.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>

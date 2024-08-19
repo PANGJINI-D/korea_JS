@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>getElementsByName -> return NodeList</h2>
+    <input type="text" name="이름" value="나재민">
+    <input type="text" name="나이" value="20">
+    <input type="id" name="id">
+    <input type="password" name="password">
+  </body>
+  <script>
+    const result = document.getElementsByName("이름");
+    console.log(result);                // NodeList(1)
+    console.log(result[0]);             // <input type="text" name="이름" value="나재민">
+    console.log(result[0].value);       // 나재민
+  </script>
+  
+</html>

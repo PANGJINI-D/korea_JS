@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H2>querySelectorAll -> return NodeList</H2>
+
+    <h3>과일리스트</h3>
+    <ol>
+        <li>사과</li>
+        <li>오렌지</li>
+        <li>포도</li>
+        <li>복숭아</li>
+        <li>바나나</li>
+    </ol>
+
+
+    <script>
+        const result = document.querySelectorAll("ol li");
+        console.log(result);    // NodeList(5)  [0]li [1]li [2]li [3]li ...
+
+        // NodeList에서는 forEach를 사용할 수 있지만, HttpCollection에서는 사용할 수 없다.
+        // 각 li 태그 안의 텍스트만 출력하기
+        result.forEach((item) => {
+            console.log(item.innerText);
+        })
+    </script>
+</body>
+</html>

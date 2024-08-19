@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>getElementsByTagName -> return HttpCollection</h2>
+    <p>p태그는 paragrah의 약자입니다</p>
+    <div>div 태그입니다</div>
+    <div>div 태그 1번째</div>
+    <div>div 태그 2번째</div>
+    <div>div 태그 3번째</div>
+    <div>div 태그 4번째</div>
+    <div>div 태그 5번째</div>
+</body>
+<script>
+    const result = document.getElementsByTagName("div");
+    console.log(result);        //HTMLCollection(6)   [0]div [1]div [2]div...
+
+    // 태그에 작성된 텍스트만 출력하고 싶을 때
+    // HTMLCollection에서는 forEach를 사용할 수 없다.
+    for(let i = 0; i < result.length; i++){
+        console.log(result[i].innerHTML);       // div 태그입니다, div 태그 1번째, ...
+    }   
+</script>
+
+</html>

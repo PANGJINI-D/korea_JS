@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 실습2</title>
+</head>
+<body>
+    <p class="text">텍스트입니다</p>
+    <p class="text">텍스트입니다</p>
+
+
+    <script>
+        // p요소에 특정 클래스를 추가하기
+        // 클래스명 : p1
+        const texts = document.querySelectorAll(".text");
+
+        texts.forEach((text) => {
+            text.classList.add('p1');
+        });
+    </script>
+  </body>
+</html>
