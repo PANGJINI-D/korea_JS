@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체크박스</title>
+</head>
+<body>
+    <label><input type="checkbox" name="선택1" value="선택1">선택1</input></label>
+    <label><input type="checkbox" name="선택2" value="선택2">선택2</input></label>
+    <label><input type="checkbox" name="선택3" value="선택3">선택3</input></label>
+    <p id="result"></p>
+
+
+    <script>
+        //체크박스 선택 시 해당 값을 가져와서 p 태그에 출력
+        // appendChile(), removeChild()
+        NodeList.prototype.filter = Array.prototype.filter;
+
+        const checkboxes = document.querySelectorAll("input[type='checkbox']");
+        console.log(checkboxes);
+        const result = document.querySelector("#result");
+
+        checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener("click", (e) => {
+                if(e.target.checked) {      // 체크되면
+                    const strong = document.createElement("strong");    // strong 태그(element) 추가
+                    strong.innerText = e.target.value;  // strong 태그의 내용은 선택된 checkbox의 value
+                    result.appendChild(strong);         // result(p태그)의 자식태그로 strong 추가하기
+                    
+                } else {                    // 체크박스 해제
+                    const strongs = document.querySelectorAll("#result strong");    // strong 태그 전부 가져오기
+                    const target = strongs.filter((strong) => {                 
+                        return strong.innerText == e.target.value})[0];         // 해제된 chechbox의 value와 strong태그의 내용이 같은 것을 target으로 설정 
+                        // [0]번 인덱스가 필요한 이유
+                        // filter 메서드는 조건을 만족하는 모든 요소를 배열로 반환한다.
+                        // 첫 번째 요소만 필요하니까 0번 인덱스를 target으로 삼는다.
+                    result.removeChild(target);     // result(p태그)의 자식태그에서 target strong 태그를 삭제
+                    
+
+                    const t = strongs.filter((strong) => {                 
+                        return strong.innerText == e.target.value});
+                    console.log(t);     // [strong]
+                    console.log(t[0]);  // <strong>선택3</strong>
+
+                }
+            })
+        })
+    </script>
+</body>
+</html>

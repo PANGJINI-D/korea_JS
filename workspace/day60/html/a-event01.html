@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 기초</title>
+</head>
+<body>
+    <h2>javascript</h2>
+    태그 안에서 on이벤트를 직접 준 경우, 속성값 안에는 자바스크립트 코드가 들어간다. <br>
+    <button onclick="alert('클릭헸다.');">버튼1</button>
+    <button onclick="test()">버튼2</button>
+    <div onmouseover="body.style.background='yellow';" onmouseout="body.style.background='green'">배경색 변경</div>
+
+
+    <script>
+        const test = () => {
+            alert('test 함수 호출');
+        }
+
+    </script>
+</body>
+</html>

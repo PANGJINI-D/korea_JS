@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px; 
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+<script>
+    console.log("[전역this]");
+    console.log(this);
+
+    const ob = {
+        name : "ㅋㅋㅋ",
+        greeting : () => {
+            console.log("[메서드에서 this]");
+            console.log(this.name);
+        }
+    }
+    ob.greeting();
+
+    const div = document.querySelector("div");
+
+    function a() {
+        console.log("[function a]");
+        console.log(this)
+    }
+
+    const arrowA = () => {
+        console.log("[arrowA] ");
+        console.log(this);
+    }
+
+    div.addEventListener("click", a);
+    div.addEventListener("click", arrowA);
+
+    
+    
+</script>
+</html>

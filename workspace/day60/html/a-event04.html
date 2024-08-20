@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키 이벤트</title>
+</head>
+<body>
+    <h2>키 이벤트</h2>
+
+    <input type="text" name="name" placeholder="이름입력"/>
+    <p id="name"></p>
+
+
+    <script>
+        const name = document.querySelector("input[name='name']");
+        const p = document.querySelector('#name');
+
+        // keydown 이벤트는 값이 입력되기 전에 발생한다.
+        // keyup 이벤트는 키보드는 눌렀다 떼면서 발생한다. (값이 입력된 후)
+        name.addEventListener("keyup", (e) => {
+            p.innerText = e.target.value;
+        })
+    </script>
+</body>
+</html>
