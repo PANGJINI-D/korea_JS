@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라이트박스02</title>
+    <link rel="stylesheet" href="../css/b-lightbox02.css">
+    <script defer src="../js/b-lightbox02.js"></script> 
+</head>
+<body>
+    <main>
+        <div class="img-box">
+            <!-- 버튼에는 원래 src속성이 없다.
+                js에서 활용하기 위해 data속성을 이용해 data-src로 사용할 수 있다.  -->
+            <button type="button" data-src="../imgs/도시.jpg">이미지1</button>
+        </div>
+        <div class="img-box">
+            <button type="button" data-src="../imgs/바다.jpg">이미지2</button>
+        </div>
+        <div class="img-box">
+            <button type="button" data-src="../imgs/산.jpg">이미지3</button>
+        </div>
+        <div class="img-box">
+            <button type="button">이미지4</button>
+        </div>
+        <div class="img-box">
+            <button type="button">이미지5</button>
+        </div>
+
+        <!-- 라이트박스 -->
+        <div class="big-img-wrap">
+            <div class="big-img-box">
+                <img src="" alter="사진 없음" class="big-img">
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

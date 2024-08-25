@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모달창</title>
+    <link rel="stylesheet" href="../css/c-modal.css">
+</head>
+<body>
+    <button onclick="openModal()">모달 열기</button>
+
+    <!-- 모달창 -->
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>모달이 열렸습니다🙏🏻</p>
+        </div>
+    </div>
+</body>
+
+<script>
+    const openModal = () => {
+        console.log('클릭')
+        document.getElementById('myModal').style.display = "block";
+    }
+
+    const closeModal = () => {
+        document.getElementById('myModal').style.display = "none";
+    }
+</script>
+</html>

@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* 헤더 */
+header {
+    background-color: antiquewhite;
+    /* 20vh : 사용자 화면의 20% */
+    height: 20vh; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+nav {
+    background-color: cadetblue;
+    /* 부모요소(header)의 25% */
+    height: 25%;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+ul li {
+    text-align: center;
+    padding-left: 20px;
+    width: 80px;
+}
+.nav--login {
+    cursor: pointer;
+}
+
+/* 메인, 푸터 */
+main {
+    background-color: coral;
+    height: 80vh;
+}
+
+footer {
+    background-color: gray;
+    height: 20vh;
+}
+
+/* 모달 */
+.modal-box {
+    background-color: #4d535199;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 100px;
+    left: 0;
+}
+
+.login-box {
+    background-color: white;
+    width: 300px;
+    padding: 30px;
+
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* js에서 클래스 추가 */
+.login-btn-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.x-box {
+    position: absolute;
+    font-size: 25px;
+    font-weight: bold;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
