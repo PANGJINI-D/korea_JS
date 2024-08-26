@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async script</title>
+</head>
+<body>
+    <p>스크립트 앞</p>
+    <script>
+        // 실행순서1️⃣
+        // dom 로드될 때, 이벤트 리스너를 등록만 한다.
+        // 실행이 되는 타이밍은 dom이 모두 로드되고 나서.
+        document.addEventListener('DOMContentLoaded', () => {
+            alert('DOM이 준비되엇음');
+        })
+    </script>
+
+    <!-- 실행순서13️⃣ -->
+    <script async src="https://javascript.info/article/script-async-defer/long.js"></script>
+    <!-- 실행순서2️⃣ -->
+    <script async src="https://javascript.info/article/script-async-defer/small.js"></script>
+
+    <p>스크립트 뒤</p>
+
+    <!-- 🌟비동기 스크립트 실행 순서
+            서로 독립적이며 먼저 다운 완료된 스크립트가 먼저 실행된다. -->
+
+</body>
+</html>

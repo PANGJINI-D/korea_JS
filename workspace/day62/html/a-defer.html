@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>defer script</title>
+</head>
+<body>
+    <p>defer 속성이 있는 script 태그 이전 p태그</p>
+    <!-- 실행2️⃣ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            alert('defer 스크립트 실행 후, dom 준비됨.');
+        })
+    </script>
+    
+    <!-- 실행1️⃣ -->
+    <!-- 🌟script 태그에 src 속성이 있을 떄만 defer를 사용한다. -->
+    <!-- 🌟defer 스크립트의 실행 타이밍 : DOM이 준비된 이후, DOMContentLoaded 이벤트 실행 전 -->
+    <script defer src="https://javascript.info/article/script-async-defer/long.js?speed=1"></script>
+    <p>script 태그 이후 p태그</p>
+
+</body>
+</html>
