@@ -10,17 +10,25 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-    <input type="text" name="name" placeholder="이름입력" autocomplete="none">
+    <input type="text" name="name" placeholder="이름입력" autocomplete="off">
+    <!-- autocomplete : 자동완성 비활성화, 사용자가 이전에 입력한 내용이 있어도 자동완성 제안이 나타나지않음
+     속성값으로는 on, none이 있다.
+     on은 브라우저가 자동완성을 허용한다, 사용자가 이전에 입력한 값이 저장되어있을경우, 입력필드에 포커스가
+     맞춰지면 자동완성 옵션이 표시된다
+     none은 자동완성을 비활성화하지만 비표준 속성으로 사용하지 않는 것이 좋다 -->
     <p id="name"></p>
-</body>
-
-<script>
-    //input 태그에 작성된 이름을 실시간으로 p태그에 출력하기
-    // let $inputName = $('input[type=text]').eq(0).value;
-    // console.log($inputName);
-
-    $("input[type=text]").on("keyup", (e) => {
-        $("#name").text(e.target.value);
-    })
-</script>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script>
+    //input 태그에 작성된 이름을 keyup, keydown, change 이벤트 중
+    //한가지를 선택해서 가져온 이름을 실시간으로 p(id=name)에 출력하기
+    //jQuery 이용하기
+    // $("input[name='name']").on("change", (e) => {
+    //   $("#name").text(e.target.value);
+    // });
+  
+    $("input[name='name']").on("change", (e) => {
+      $("#name").text($(e.target).val());
+    });
+  </script>
 </html>

@@ -36,13 +36,14 @@
 </body>
 <script>
     const mark = document.querySelector('div.mark');
+    console.log(mark);
     mark.addEventListener("click", (e) => {
-        const input = document.querySelector("input[name='password']");
-        const isText = input.type === "text";
-
-        input.setAttribute('type', isText?'password':'text');
-        e.target.style.backgroundImage = `url(${isText? './../img/close.png':'./../img/open.png'})`;
+      const input = document.querySelector("input[name='password']");
+      const isText = input.type === "text";
+      console.log(isText);
+  
+      input.setAttribute('type', isText?'password':'text');
+      e.target.style.backgroundImage = `url(${isText? './../img/close.png':'./../img/open.png'})`;
     });
-
-</script>
+  </script>
 </html>
