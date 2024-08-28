@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery test 02</title>
+    <!-- jquery 연결 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+	crossorigin="anonymous"></script>
+</head>
+<body>
+    <label>
+        <input type="checkbox" value="선택1">선택1</input>
+    </label>
+    <label>
+        <input type="checkbox" value="선택2">선택2</input>
+    </label>
+    <label>
+        <input type="checkbox" value="선택3">선택3</input>
+    </label>
+    <p id="result"></p>
+</body>
+
+<script>
+    // 체크박스 선택 시  해당 내용을 p태그에 이어붙이기
+    // 선택 해제 시 해당 내용을 제거하기
+    const $checkboxes = $("input[type='checkbox']");
+    const $result = $('#result');
+
+    $checkboxes.on("click", (e) => {
+        if(e.target.checked){
+        $result.append(`<strong>${e.target.value}</strong>`);
+        }else{
+        const $strong = $("#result strong");
+        $strong.filter((i, strong) => strong.innerText === e.target.value).remove();
+        }
+    });
+
+</script>
+</html>
